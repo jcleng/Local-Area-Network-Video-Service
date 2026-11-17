@@ -1,0 +1,6 @@
+.vscode/
+.cache/
+**/**.mp4
+**/**.log
+__pycache__/
+.batch.result

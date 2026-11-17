@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d10">
+<title>大象日记 · 局域网播放</title>
+<style>
+  :root{
+    --bg:#0b0b0f; --bg2:#14141a; --bg3:#1c1c25; --line:#2a2a36;
+    --fg:#e8e8ef; --dim:#9a9aae; --accent:#ff5a5f; --ok:#4ade80;
+    --sidebar:320px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
+    font-family:PingFang SC,"Microsoft YaHei",system-ui,-apple-system,Roboto,sans-serif;
+    -webkit-tap-highlight-color:transparent}
+  body{display:flex;overflow:hidden}
+
+  /* 移动端长按禁止原生弹单（复制视频地址/下载图片），否则会打断长按倍速 */
+  #player,#player *{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+  #player video{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;
+    -webkit-user-drag:none;pointer-events:auto}
+
+  /* ---------- 侧边栏 ---------- */
+  aside{width:var(--sidebar);flex:0 0 var(--sidebar);display:flex;flex-direction:column;
+    background:var(--bg2);border-right:1px solid var(--line);min-height:0}
+  .brand{padding:16px 16px 10px;display:flex;align-items:center;gap:8px}
+  .brand h1{font-size:15px;margin:0;font-weight:600;letter-spacing:.3px}
+  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok)}
+  .search{padding:0 12px 10px}
+  .search input{width:100%;padding:8px 11px;border-radius:8px;border:1px solid var(--line);
+    background:var(--bg3);color:var(--fg);font-size:13px;outline:none}
+  .search input:focus{border-color:#4a4a60}
+  .list{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:0 8px 24px}
+  .list::-webkit-scrollbar{width:8px}
+  .list::-webkit-scrollbar-thumb{background:#33333f;border-radius:4px}
+  .season{margin:14px 8px 6px;font-size:12px;color:var(--dim);letter-spacing:1px;
+    display:flex;justify-content:space-between;align-items:center}
+  .season span.n{color:#5c5c70}
+  .ep{display:flex;gap:10px;align-items:center;padding:8px;border-radius:9px;cursor:pointer;
+    border:1px solid transparent;transition:background .15s,border-color .15s}
+  .ep:hover{background:var(--bg3)}
+  .ep.active{background:#2a1620;border-color:#5c2333}
+  .ep .cover{width:74px;height:44px;flex:0 0 74px;border-radius:5px;overflow:hidden;background:#000;
+    position:relative}
+  .ep .cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .ep .cover .badge{position:absolute;right:2px;bottom:2px;background:rgba(0,0,0,.75);
+    font-size:10px;padding:0 3px;border-radius:3px;color:#ddd}
+  .ep .meta{min-width:0;flex:1}
+  .ep .t{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ep .s{font-size:11px;color:var(--dim);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ep.active .t{color:#ffb3b8}
+  .progress{height:2px;background:var(--line);border-radius:2px;margin-top:5px;overflow:hidden}
+  .progress i{display:block;height:100%;background:var(--accent);width:0}
+
+  /* ---------- 主区 ---------- */
+  main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0}
+  #player{flex:1;min-height:0;background:#000}
+  .bar{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--bg2);
+    border-top:1px solid var(--line);font-size:13px;flex-wrap:wrap}
+  .bar .title{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw}
+  .bar .sp{flex:1}
+  .bar button{background:var(--bg3);color:var(--fg);border:1px solid var(--line);border-radius:7px;
+    padding:6px 12px;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+  .bar button:hover:not(:disabled){background:#26262f;border-color:#3c3c4d}
+  .bar button:disabled{opacity:.35;cursor:not-allowed}
+  .tag{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:2px 6px}
+  .warn{color:#fbbf24}
+  select{background:var(--bg3);color:var(--fg);border:1px solid var(--line);border-radius:7px;
+    padding:6px 8px;font-size:12.5px;cursor:pointer;outline:none;max-width:180px}
+  select:hover:not(:disabled){background:#26262f;border-color:#3c3c4d}
+  select:disabled{opacity:.4;cursor:not-allowed}
+  .subwrap{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--dim)}
+
+  .hint{padding:8px 16px;font-size:11.5px;color:#6a6a80;background:var(--bg2);border-top:1px solid var(--line)}
+  kbd{background:var(--bg3);border:1px solid var(--line);border-radius:4px;padding:1px 5px;
+    font-family:ui-monospace,monospace;font-size:10.5px;color:#b9b9c9}
+
+  /* 移动端 */
+  #menuBtn{display:none;background:none;border:none;color:var(--fg);font-size:20px;cursor:pointer;padding:0 4px}
+  @media (max-width:860px){
+    /* 抽屉宽度：小屏取 86vw 但设上限，避免完全遮住播放器 */
+    :root{--sidebar:min(86vw, 340px)}
+    aside{position:fixed;inset:0 auto 0 0;z-index:1000;transform:translateX(-102%);
+      transition:transform .25s cubic-bezier(.3,.7,.2,1);box-shadow:0 0 40px #000}
+    aside.open{transform:none}
+    #menuBtn{display:inline-block}
+    .bar .title{max-width:none;flex:1;min-width:0}
+    .hint{display:none}
+    #mask{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:999;display:none;
+      -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+    #mask.show{display:block}
+    /* 抽屉打开时隐藏播放器控件层（否则会透过遮罩与抽屉形成“菜单重叠”视觉） */
+    body.drawer-open .art-bottom,
+    body.drawer-open .art-layers,
+    body.drawer-open .art-mask{opacity:0 !important;transition:opacity .2s}
+    body.drawer-open .bar{opacity:.3;transition:opacity .2s}
+
+    /* 播放器自带的底部控制栏在窄屏下会溢出，收紧尺寸 */
+    .art-video-player{--art-control-icon-size:24px;--art-padding:6px}
+    .art-controls-left,.art-controls-right{gap:2px}
+    /* 底部工具栏：收紧间距，避免堆成两行挤压播放器 */
+    .bar{gap:6px;padding:8px 10px}
+    .bar button{padding:5px 8px;font-size:11.5px;letter-spacing:-.5px}
+    .bar button .lbl{display:none}          /* 只留图标 */
+    .bar .title{font-size:12px}
+    .subwrap>span{display:none}             /* “字幕”文字隐藏，保留下拉 */
+    select{max-width:96px;padding:5px 4px;font-size:11.5px}
+    #nowInfo{display:none}
+  }
+  /* 更小屏幕：进一步收缩 */
+  @media (max-width:480px){
+    .bar button{padding:5px 6px}
+    .bar .title{max-width:38vw}
+    select{max-width:84px}
+  }
+</style>
+</head>
+<body>
+<div id="mask"></div>
+<aside id="sidebar">
+  <div class="brand"><span class="dot"></span><h1>大象日记</h1>
+    <span class="sp" style="flex:1"></span>
+    <span class="tag" id="count">—</span>
+  </div>
+  <div class="search"><input id="q" type="search" placeholder="搜索集数 / 文件名…" autocomplete="off"></div>
+  <div class="list" id="list"><div class="season">加载中…</div></div>
+</aside>
+
+<main>
+  <div id="player"></div>
+  <div class="bar">
+    <button id="menuBtn" title="剧集列表">☰</button>
+    <span class="title" id="nowTitle">选择一集开始播放</span>
+    <span class="tag" id="nowInfo"></span>
+    <span class="sp"></span>
+    <span class="subwrap"><span>字幕</span>
+      <select id="subSel" title="切换字幕"><option value="-1">关闭</option></select>
+    </span>
+    <button id="prev" title="上一集 (P)">◀◀<span class="lbl"> 上一集</span></button>
+    <button id="next" title="下一集 (N)">▶▶<span class="lbl"> 下一集</span></button>
+    <button id="dl" title="下载本集">⤓<span class="lbl"> 下载</span></button>
+  </div>
+  <div class="hint">
+    <kbd>←</kbd><kbd>→</kbd> 快退/快进 10s &nbsp;·&nbsp;
+    <kbd>↑</kbd><kbd>↓</kbd> 音量 &nbsp;·&nbsp;
+    <kbd>Space</kbd> 暂停 &nbsp;·&nbsp;
+    <kbd>F</kbd> 全屏 &nbsp;·&nbsp;
+    <kbd>N</kbd>/<kbd>P</kbd> 上下集 &nbsp;·&nbsp;
+    自动记忆播放位置
+  </div>
+</main>
+
+<script src="/vendor/artplayer.js"></script>
+<script>
+(() => {
+  'use strict';
+
+  const $ = (s) => document.querySelector(s);
+  const listEl = $('#list');
+  const playerEl = $('#player');
+  const nowTitle = $('#nowTitle');
+  const nowInfo = $('#nowInfo');
+  const btnPrev = $('#prev');
+  const btnNext = $('#next');
+  const btnDl = $('#dl');
+  const subSel = $('#subSel');
+  const sidebar = $('#sidebar');
+  const mask = $('#mask');
+
+  const LS_POS = 'vd:pos:';       // 播放进度
+  const LS_LAST = 'vd:last';      // 上次播放的文件
+  const LS_SUB = 'vd:sub';        // 偏好的字幕语言标签
+  const SEEN = 'vd:seen:';        // 已看完
+
+  let items = [];                 // 扁平列表（已排序）
+  let current = -1;               // 当前在 items 中的下标
+  let art = null;
+  let lastGood = -1;
+
+  // ---------- 工具 ----------
+  const fmtSize = (b) => b > 1e9 ? (b / 1073741824).toFixed(2) + ' GB'
+                    : b > 1e6 ? (b / 1048576).toFixed(0) + ' MB' : (b / 1024).toFixed(0) + ' KB';
+  const fmtTime = (s) => {
+    if (!s || !isFinite(s)) return '';
+    const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+    return `${m}:${String(sec).padStart(2, '0')}`;
+  };
+  const epLabel = (it) => {
+    if (it.season != null && it.episode != null)
+      return `S${String(it.season).padStart(2, '0')}E${String(it.episode).padStart(2, '0')}`;
+    if (it.episode != null) return `E${String(it.episode).padStart(2, '0')}`;
+    return it.title;
+  };
+  const encPath = (p) => p.split('/').map(encodeURIComponent).join('/');
+  const mediaURL = (it) => '/media/' + encPath(it.file);
+  const subURL = (f) => '/subs/' + encPath(f);
+  const posterURL = (it) => '/api/poster?f=' + encodeURIComponent(it.file);
+
+  // ---------- 字幕 ----------
+  function fillSubSelect(it) {
+    const subs = Array.isArray(it?.subtitles) ? it.subtitles : [];
+    subSel.innerHTML = ['<option value="-1">关闭</option>']
+      .concat(subs.map((s, i) => `<option value="${i}">${s.label}</option>`))
+      .join('');
+    subSel.disabled = subs.length === 0;
+
+    // 默认选中：1) 上次记住的语言（含“关闭”）2) 列表第一个（后端已按中文优先排序）
+    const pref = localStorage.getItem(LS_SUB) || '';
+    if (pref === '__off__') { subSel.value = '-1'; return { subs, index: -1 }; }
+    let pick = pref ? subs.findIndex((s) => s.label === pref || s.lang === pref) : -1;
+    if (pick < 0 && subs.length) pick = 0;
+    subSel.value = pick >= 0 ? String(pick) : '-1';
+    return { subs, index: pick };
+  }
+
+  async function applySubtitle(subs, index) {
+    if (!art) return;
+    if (index < 0) {
+      // 注意：art.subtitle.switch('') 不会真的移除字幕（源码中 url 为空时直接 return），
+      // 必须手动移除 <track> 元素并清空字幕层。
+      try {
+        const v = art.video;
+        [...v.querySelectorAll('track')].forEach((t) => t.remove());
+        const box = art.template && art.template.$subtitle;
+        if (box) box.innerHTML = '';
+        if (art.subtitle && typeof art.subtitle === 'object') art.subtitle.option = null;
+      } catch (_) {}
+      localStorage.setItem(LS_SUB, '__off__');
+      return;
+    }
+    const s = subs[index];
+    try {
+      await art.subtitle.switch(subURL(s.file), { name: s.label, type: 'vtt' });
+      localStorage.setItem(LS_SUB, s.label);
+    } catch (err) {
+      art.notice.show = '字幕加载失败: ' + s.label;
+      console.warn('subtitle switch failed', err);
+    }
+  }
+
+  subSel.addEventListener('change', () => {
+    const it = items[current];
+    if (!it) return;
+    const subs = Array.isArray(it.subtitles) ? it.subtitles : [];
+    applySubtitle(subs, Number(subSel.value));
+    // 将选择同步到列表缓存，下次切集保留
+    it._subIndex = Number(subSel.value);
+  });
+
+  // ---------- 列表 ----------
+  function renderList(filter = '') {
+    const f = filter.trim().toLowerCase();
+    const shown = f
+      ? items.filter((it) => it.name.toLowerCase().includes(f) || epLabel(it).toLowerCase().includes(f))
+      : items;
+    if (!shown.length) { listEl.innerHTML = '<div class="season">没有匹配的视频</div>'; return; }
+
+    const groups = new Map();
+    for (const it of shown) {
+      const k = it.season ?? 0;
+      if (!groups.has(k)) groups.set(k, []);
+      const arr = groups.get(k); if (arr) arr.push(it);
+    }
+
+    const html = [];
+    for (const [season, arr] of [...groups.entries()].sort((a, b) => a[0] - b[0])) {
+      const label = season ? `第 ${season} 季` : '其他';
+      html.push(`<div class="season"><span>${label}</span><span class="n">${arr.length} 集</span></div>`);
+      for (const it of arr) {
+        const idx = items.indexOf(it);
+        const subs = Array.isArray(it.subtitles) ? it.subtitles : [];
+        const pos = Number(localStorage.getItem(LS_POS + it.file) || 0);
+        const seen = localStorage.getItem(SEEN + it.file) === '1';
+        const pct = it.duration ? Math.min(100, (pos / it.duration) * 100) : 0;
+        html.push(`
+          <div class="ep ${idx === current ? 'active' : ''}" data-i="${idx}">
+            <div class="cover">
+              <img loading="lazy" src="${posterURL(it)}" alt="" onerror="this.style.display='none'">
+              ${seen ? '<span class="badge" style="color:#4ade80">✓</span>' : ''}
+            </div>
+            <div class="meta">
+              <div class="t">${epLabel(it)}${subs.length ? ' <span class="tag" style="font-size:10px">字幕</span>' : ''}</div>
+              <div class="s">${fmtSize(it.size)}${pos > 5 ? ' · 看到 ' + fmtTime(pos) : ''}</div>
+              <div class="progress"><i style="width:${pct}%"></i></div>
+            </div>
+          </div>`);
+      }
+    }
+    listEl.innerHTML = html.join('');
+  }
+
+  listEl.addEventListener('click', (e) => {
+    const ep = e.target.closest('.ep');
+    if (!ep) return;
+    play(Number(ep.dataset.i));
+    closeSidebar();
+  });
+
+  $('#q').addEventListener('input', (e) => renderList(e.target.value));
+
+  // ---------- 播放 ----------
+  function play(index) {
+    if (index < 0 || index >= items.length) return;
+    current = index;
+    lastGood = index;
+    const it = items[index];
+    localStorage.setItem(LS_LAST, it.file);
+
+    nowTitle.textContent = `${epLabel(it)} — ${it.title}`;
+    nowInfo.textContent = fmtSize(it.size);
+    btnPrev.disabled = index <= 0;
+    btnNext.disabled = index >= items.length - 1;
+    document.title = `${epLabel(it)} · 大象日记`;
+    history.replaceState(null, '', '#' + encodeURIComponent(it.file));
+
+    const startAt = Number(localStorage.getItem(LS_POS + it.file) || 0);
+    const resumeAt = startAt > 5 ? startAt : 0;
+
+    const subs = Array.isArray(it.subtitles) ? it.subtitles : [];
+    // 不把字幕直接传给 artplayer 初始化（它的 subtitle 只能一条），
+    // 先在 ready 后根据下拉选择统一挂载，逻辑只在一处。
+    fillSubSelect(it);
+
+    // 销毁旧实例，避免内存泄漏和事件重复
+    if (art) { try { art.destroy(false); } catch (_) {} art = null; }
+    playerEl.innerHTML = '';
+
+    art = new Artplayer({
+      container: playerEl,
+      url: mediaURL(it),
+      type: 'mp4',
+      title: epLabel(it),
+      poster: posterURL(it),
+      volume: 0.8,
+      autoplay: true,
+      autoSize: false,
+      autoMini: window.innerWidth > 860,
+      theme: '#ff5a5f',
+      lang: 'zh-cn',
+      setting: true,
+      playbackRate: true,
+      aspectRatio: true,
+      fullscreen: true,
+      fullscreenWeb: true,
+      miniProgressBar: true,
+      mutex: true,
+      backdrop: true,
+      playsInline: true,
+      autoPlayback: false,
+      airplay: true,
+      hotkey: true,
+      pip: true,
+      screenshot: true,
+      lock: true,
+      fastForward: false,   // 关闭内置（需按1秒才生效，与自定义长按叠加会冲突）
+      autoOrientation: true,
+      moreVideoAttr: { crossOrigin: 'anonymous', preload: 'metadata' },
+      // 注意：不要给 mp4 定义 customType。artplayer 一旦发现 customType[type] 存在，
+      // 就会把加载完全交给自定义函数（不再设置 video.src），视频会一直 loading。
+      // mp4 是原生支持格式，直接交给播放器即可。
+      settings: [],
+      i18n: {
+        'zh-cn': {
+          'Play': '播放', 'Pause': '暂停', 'Playback Rate': '播放速度', 'Normal': '正常',
+          'Subtitle': '字幕', 'Off': '关闭', 'Fullscreen': '全屏',
+          'Exit Fullscreen': '退出全屏', 'Web Fullscreen': '网页全屏',
+          'Exit Web Fullscreen': '退出网页全屏', 'Mini Player': '迷你播放器',
+          'Exit Mini Player': '退出迷你播放器', 'Screenshot': '截图',
+          'Picture-in-Picture': '画中画', 'Exit Picture-in-Picture': '退出画中画',
+          'Settings': '设置', 'Aspect Ratio': '画面比例', 'Default': '默认',
+          'Volume': '音量', 'Mute': '静音', 'Flip': '画面翻转', 'Video Flip': '画面翻转',
+          'Horizontal': '水平翻转', 'Vertical': '垂直翻转', 'Screenshot': '截图',
+        },
+      },
+      customType: {},
+    });
+
+    // Opus 音轨兼容性提示（S2 部分文件音轨是 Opus-in-MP4，Safari/iOS 不支持）
+    art.once('video:error', () => {
+      const canOpus = art.video.canPlayType('video/mp4; codecs="opus"');
+      art.notice.show = canOpus
+        ? '播放出错，可能是网络中断或文件编码问题，试试用「下载」按钮'
+        : '该集音轨为 Opus 编码，当前浏览器（多为 Safari/iOS）不支持，请用 Chrome/Edge 打开或下载后播放';
+    });
+
+    art.on('ready', () => {
+      if (resumeAt && art.duration && resumeAt < art.duration - 20) {
+        art.currentTime = resumeAt;
+        art.notice.show = `已从 ${fmtTime(resumeAt)} 继续播放`;
+      }
+      // 挂载当前选中的字幕
+      const subIdx = Number(subSel.value);
+      if (subIdx >= 0) {
+        applySubtitle(Array.isArray(it.subtitles) ? it.subtitles : [], subIdx);
+      }
+      bindLongPressRate(art);
+    });
+
+    // 进度记忆（每 5 秒）
+    let lastSave = 0;
+    art.on('video:timeupdate', () => {
+      const t = Math.floor(art.currentTime);
+      if (t - lastSave >= 5 || t < lastSave) {
+        lastSave = t;
+        localStorage.setItem(LS_POS + it.file, String(t));
+        updateCurrentProgress(t, art.duration);
+      }
+    });
+
+    art.on('video:ended', () => {
+      localStorage.setItem(LS_POS + it.file, '0');
+      localStorage.setItem(SEEN + it.file, '1');
+      renderList($('#q').value);
+      if (current < items.length - 1) {
+        setTimeout(() => play(current + 1), 800);
+      }
+    });
+
+    // 全屏滚轮调音量（桌面）
+    art.on('ready', () => {
+      const k = (e) => {
+        if (!art.fullscreen && !art.fullscreenWeb) return;
+        e.preventDefault();
+        art.volume = Math.min(1, Math.max(0, art.volume + (e.deltaY > 0 ? -0.02 : 0.02)));
+      };
+      playerEl.addEventListener('wheel', k, { passive: false });
+    });
+
+    renderList($('#q').value);
+  }
+
+  function updateCurrentProgress(t, dur) {
+    const el = listEl.querySelector('.ep.active');
+    if (!el || !dur) return;
+    el.querySelector('.progress i').style.width = Math.min(100, (t / dur) * 100) + '%';
+  }
+
+  // ---------- 长按倍速（移动端）----------
+  // artplayer 自带的 fastForward 要按 1 秒才生效，且不阻止原生长按菜单。
+  // 这里自己实现：按住 300ms 以 2 倍速播放，松手/手指滑走立即恢复，并阻止系统菜单。
+  const LONG_PRESS_MS = 300;
+  const LONG_PRESS_RATE = 2;
+
+  function bindLongPressRate(player) {
+    const video = player.video;
+    if (!video) return;
+
+    let timer = null;
+    let rateBefore = 1;
+    let boosting = false;
+    let startX = 0, startY = 0;
+
+    const stop = () => {
+      if (timer) { clearTimeout(timer); timer = null; }
+      if (boosting) {
+        boosting = false;
+        try { player.playbackRate = rateBefore; } catch (_) {}
+        try { player.notice.show = ''; } catch (_) {}
+      }
+    };
+
+    const start = (e) => {
+      if (e.touches && e.touches.length !== 1) return stop();   // 双指缩放不触发
+      if (!player.playing) return;
+      const t = e.touches ? e.touches[0] : e;
+      startX = t.clientX; startY = t.clientY;
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        timer = null;
+        rateBefore = player.playbackRate || 1;
+        boosting = true;
+        try {
+          player.playbackRate = LONG_PRESS_RATE;
+          player.notice.show = `${LONG_PRESS_RATE}x 快进中，松手恢复`;
+        } catch (_) {}
+      }, LONG_PRESS_MS);
+    };
+
+    // 手指滑走（拖进度/调音量）或移动幅度大 → 取消长按
+    const move = (e) => {
+      if (!timer && !boosting) return;
+      const t = e.touches ? e.touches[0] : e;
+      if (!t) return;
+      if (Math.abs(t.clientX - startX) > 12 || Math.abs(t.clientY - startY) > 12) stop();
+    };
+
+    video.addEventListener('touchstart', start, { passive: true });
+    video.addEventListener('touchmove', move, { passive: true });
+    video.addEventListener('touchend', stop, { passive: true });
+    video.addEventListener('touchcancel', stop, { passive: true });
+    // 视线转移 / 切后台 / 暂停时也要恢复，避免卡在倍速
+    player.on('video:pause', stop);
+    player.on('video:ended', stop);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+    window.addEventListener('blur', stop);
+    // 清除时释放
+    player.on('destroy', () => {
+      stop();
+      video.removeEventListener('touchstart', start);
+      video.removeEventListener('touchmove', move);
+      video.removeEventListener('touchend', stop);
+      video.removeEventListener('touchcancel', stop);
+    });
+  }
+
+  // ---------- 导航 ----------
+  btnPrev.onclick = () => { if (current > 0) play(current - 1); };
+  btnNext.onclick = () => { if (current < items.length - 1) play(current + 1); };
+  btnDl.onclick = () => {
+    if (current >= 0) location.href = mediaURL(items[current]) + '?download=1';
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'n' || e.key === 'N') { e.preventDefault(); btnNext.click(); }
+    else if (e.key === 'p' || e.key === 'P') { e.preventDefault(); btnPrev.click(); }
+  });
+
+  // 移动端侧栏
+  function openSidebar() {
+    // 先退出播放器的全屏/网页全屏/设置弹层，否则它们的 z-index(9999) 会把抽屉盖住，
+    // 或者设置面板被抽屉遮挡，造成“菜单和播放器菜单重叠”。
+    if (art) {
+      try {
+        if (art.fullscreen) art.fullscreen = false;
+        if (art.fullscreenWeb) art.fullscreenWeb = false;
+        if (art.setting && art.setting.show) art.setting.show = false;
+        if (art.notice) art.notice.show = '';
+      } catch (_) {}
+    }
+    sidebar.classList.add('open');
+    mask.classList.add('show');
+    document.body.classList.add('drawer-open');
+    syncMaskInset();
+    // 抽屉有 250ms 展开动画，动画结束后再校正一次遮罩边界
+    setTimeout(syncMaskInset, 280);
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    mask.classList.remove('show');
+    document.body.classList.remove('drawer-open');
+  }
+  $('#menuBtn').onclick = () => sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+  mask.onclick = closeSidebar;
+  // 抽屉宽（约 340px）时，遮罩中心会落在抽屉范围内，导致点遮罩闭不掉。
+  // 对策：打开抽屉后把遮罩左边距卡在抽屉右边缘，遮罩只覆盖右侧空白区。
+  function syncMaskInset() {
+    if (window.innerWidth <= 860) {
+      // 用 --sidebar 的实际宽度而不是 getBoundingClientRect（动画中位置不可靠）
+      const w = sidebar.offsetWidth || 340;
+      mask.style.left = Math.max(0, Math.round(w)) + 'px';
+    } else {
+      mask.style.left = '0';
+    }
+  }
+  window.addEventListener('resize', () => {
+    if (sidebar.classList.contains('open')) syncMaskInset();
+  });
+
+  // ---------- 启动 ----------
+
+  // 阻止 video 元素的原生右键/长按菜单（“复制视频地址”“下载图片”等）。
+  // 只作用在 video 上，保留 artplayer 在容器上的自定义右键菜单。
+  playerEl.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'VIDEO') e.preventDefault();
+  }, { passive: false });
+
+  // iOS Safari 的图片保存弹单
+  playerEl.addEventListener('dragstart', (e) => e.preventDefault());
+  fetch('/api/list').then((r) => r.json()).then((data) => {
+    items = data.items;
+    $('#count').textContent = data.total + ' 个视频';
+    current = -1;
+
+    // 恢复上次播放：优先 hash，其次 localStorage
+    const fromHash = decodeURIComponent(location.hash.slice(1) || '');
+    const target = fromHash || localStorage.getItem(LS_LAST) || '';
+    const idx = items.findIndex((it) => it.file === target);
+
+    renderList('');
+    if (idx >= 0) play(idx);
+    else if (items.length) play(0);
+  }).catch((err) => {
+    listEl.innerHTML = `<div class="season warn">加载列表失败: ${err.message}</div>`;
+  });
+})();
+</script>
+</body>
+</html>
