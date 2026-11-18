@@ -16,7 +16,7 @@ I met up with an old friend, Wendy.
 4
 00:00:05,840 --> 00:00:08,680
 She seems to be having a bit of an identity crisis,
-她似乎正面临身份认同的危机，
+她似乎正面临身份认同的危机。
 
 5
 00:00:08,680 --> 00:00:12,000
@@ -96,7 +96,7 @@ Here, they're reared and nurtured
 20
 00:01:08,960 --> 00:01:11,880
 by a team of 20 dedicated keepers
-20名敬业的饲养员照料和培育。
+一支由20名敬业的饲养员组成的团队照料和培养。
 
 21
 00:01:11,880 --> 00:01:14,400
@@ -111,7 +111,7 @@ Dane Daphne Sheldrick.
 23
 00:01:15,960 --> 00:01:20,320
 The ultimate aim is to get them back to the wild
-最终目标是将他们送回野外，
+最终目标是将他们带回野外，
 
 24
 00:01:20,320 --> 00:01:22,160
@@ -261,12 +261,12 @@ They've all experienced tragedy,
 53
 00:02:49,680 --> 00:02:52,920
 and they've all had to grow up and learn lessons far quicker
-它们都不得不更快地成长并吸取教训。
+它们都不得不更快地成长并吸取教训，
 
 54
 00:02:52,920 --> 00:02:54,760
 than they would have done in the wild.
-比在野外情况下要快得多。
+比在野外时要快得多。
 
 55
 00:02:54,760 --> 00:02:57,200
@@ -306,7 +306,7 @@ for the orphans to run rings around the keepers.
 62
 00:03:15,440 --> 00:03:17,600
 Playing is a great way for this little herd
-玩耍是让这些无关的婴儿相互建立友谊的好方式。
+玩耍是让这些无关的婴儿相互建立联系的好方式。
 
 63
 00:03:17,600 --> 00:03:20,800
@@ -391,7 +391,7 @@ back to the wild.
 79
 00:04:28,480 --> 00:04:31,280
 down here in Sarvo National Park.
-我在萨沃尔国家公园里。
+就在萨沃尔国家公园里。
 
 80
 00:04:31,280 --> 00:04:33,920
@@ -426,12 +426,12 @@ from Nairobi or furniture brought
 86
 00:04:43,880 --> 00:04:47,960
 to begin the process of introducing them back into the wild.
-它们被带去，以便重新放回野外。
+开始让它们重新回归野外的过程就发生在这里。
 
 87
 00:04:47,960 --> 00:04:51,160
 But not only is it wild, it is stunningly beautiful
-但这里不仅原始，而且美得令人惊叹，
+但这里不仅充满野性，还美得令人惊叹，
 
 88
 00:04:51,160 --> 00:04:53,360
@@ -456,7 +456,7 @@ in open-air stockades and go out into the bush each day
 92
 00:05:02,040 --> 00:05:04,120
 to learn everything they need to know
-学习所有需要掌握的知识。
+学习所有需要了解的知识。
 
 93
 00:05:04,120 --> 00:05:05,700
@@ -476,7 +476,7 @@ is to see how Wendy is getting on.
 96
 00:05:12,800 --> 00:05:15,320
 At the age of four, she should be settled
-四岁时，她应该已经适应
+四岁时，她应该能够适应
 
 97
 00:05:15,320 --> 00:05:17,840
@@ -536,7 +536,7 @@ But at the same time, we are her family.
 108
 00:05:41,840 --> 00:05:43,040
 The keepers are her family.
-那些饲养者也是她的家人。
+饲养者也是她的家人。
 
 109
 00:05:43,040 --> 00:05:46,840
@@ -546,7 +546,7 @@ We have to play that role for her if it's what she needs.
 110
 00:05:46,840 --> 00:05:50,280
 And each of these animals are very distinct characters.
-而这些动物每一个都有独特的性格。
+而且这些动物各自都有独特的性格。
 
 111
 00:05:50,280 --> 00:05:54,160
@@ -601,12 +601,12 @@ with Michaela.
 121
 00:06:17,400 --> 00:06:21,120
 - There are 10 of them living here at the moment,
-目前有10人居住在这里，
+目前有10个人住在这里，
 
 122
 00:06:21,120 --> 00:06:23,840
 but things are about to change.
-但情况即将发生变化。
+但情况即将改变。
 
 123
 00:06:23,840 --> 00:06:26,400
@@ -626,12 +626,12 @@ However, they all get to an age around the age of two
 126
 00:06:31,240 --> 00:06:33,640
 where they need to move on to the next stage
-他们需要进入下一个阶段。
+他们需要进入下一阶段。
 
 127
 00:06:33,640 --> 00:06:35,200
 of their rehabilitation.
-关于他们的康复情况。
+他们的康复过程。
 
 128
 00:06:35,200 --> 00:06:36,520
@@ -676,17 +676,17 @@ the new group of little elephants
 136
 00:06:53,000 --> 00:06:55,760
 from the orphanage in Nairobi up here to Ethumba,
-从内罗毕的孤儿院来到这里，到埃特姆巴。
+从内罗毕的孤儿院到这里，到埃特姆巴，
 
 137
 00:06:55,760 --> 00:06:59,040
 they're going to separate them in one part of the stockade
-他们会在栅栏的某处将他们分开。
+他们会在栅栏的某一部分将他们分开，
 
 138
 00:06:59,040 --> 00:07:01,120
 and they're going to put Wendy with them.
-然后他们会把温迪和他们在一起。
+然后会把温迪和他们在一起。
 
 139
 00:07:01,120 --> 00:07:02,920
@@ -696,7 +696,7 @@ Now that'll suddenly give her a role again.
 140
 00:07:02,920 --> 00:07:04,720
 It'll give her a purpose in life.
-这也会让她在生活中有目标。
+这也会给她生活带来意义。
 
 141
 00:07:04,720 --> 00:07:07,160
@@ -716,7 +716,7 @@ Here in Nairobi, preparations are in full swing
 144
 00:07:16,280 --> 00:07:20,320
 for this move, which is due to happen early tomorrow morning.
-这次迁移预计明天清晨进行。
+这次迁移预计在明天清晨进行。
 
 145
 00:07:20,320 --> 00:07:23,480
@@ -746,7 +746,7 @@ The move could be pretty stressful for him,
 150
 00:07:35,840 --> 00:07:37,800
 but he's really going to need a big friend
-但它真的需要一个强大的朋友。
+但它确实需要一个强大的朋友。
 
 151
 00:07:37,800 --> 00:07:39,660
@@ -786,7 +786,7 @@ are well on their way down to join Wendy
 158
 00:08:09,080 --> 00:08:10,840
 and the others here in Ephumba.
-还有这里埃普姆巴的其他人。
+还有埃普姆巴这里的其他人。
 
 159
 00:08:10,840 --> 00:08:15,760
@@ -796,12 +796,12 @@ It's eight hot hours in a truck
 160
 00:08:15,760 --> 00:08:18,400
 driving deep into Sarvo National Park,
-正在深入萨沃尔国家公园行驶。
+继续驶向萨沃尔国家公园深处，
 
 161
 00:08:18,400 --> 00:08:21,040
 which will be home for the rest of their lives.
-那里将成为他们余生居住的地方。
+那里将成为他们余生的家。
 
 162
 00:08:21,040 --> 00:08:27,600
@@ -821,7 +821,7 @@ Although I have to say, little a rock does look quite anxious.
 165
 00:08:37,840 --> 00:08:39,880
 There must be tough for them, different voices,
-对他们来说肯定很艰难，有各种不同的声音。
+对他们来说一定很艰难，有各种不同的声音。
 
 166
 00:08:39,880 --> 00:08:41,600
@@ -841,7 +841,7 @@ But the one thing they've got, of course, is the keepers.
 169
 00:08:48,640 --> 00:08:51,400
 The keepers are the continuity in this whole project.
-守护者就是这个项目的延续性所在。
+守护者就是这个项目的延续性。
 
 170
 00:08:51,400 --> 00:08:54,040
@@ -861,7 +861,7 @@ This one, the littlest one, a rock, you can tell.
 173
 00:09:02,280 --> 00:09:05,240
 It's whole body language says, "I'm nervous.
-他的全身语言都在表达：“我很紧张。”
+他的全身语言都在表明：“我很紧张。”
 
 174
 00:09:05,240 --> 00:09:07,320
@@ -891,7 +891,7 @@ He really does need a bigger elephant
 179
 00:09:17,480 --> 00:09:19,360
 to take him under her wing,
-让那只大象能把他保护在怀里，
+让那只大象能把他护在怀里，
 
 180
 00:09:19,360 --> 00:09:22,120
@@ -951,7 +951,7 @@ and the little ones are being thoroughly checked over.
 191
 00:09:53,320 --> 00:09:57,320
 Just reassuring, just touching, feeling.
-只是给予安慰、给予关怀、给予情感支持而已。
+只是给予安慰、给予关怀、给予情感上的支持而已。
 
 192
 00:09:57,320 --> 00:09:58,320
@@ -961,7 +961,7 @@ Are you okay?
 193
 00:09:58,320 --> 00:09:59,320
 Everything's fine, don't worry.
-一切都没问题，不用担心。
+没事的，不用担心。
 
 194
 00:09:59,320 --> 00:10:02,320
@@ -976,7 +976,7 @@ A rock needs some reassurance, so where is Wendy?
 196
 00:10:06,320 --> 00:10:10,320
 There she is, and how typical she's taking no interest,
-她就在那儿，她完全不感兴趣，
+她就在那儿，她对一切毫无兴趣，
 
 197
 00:10:10,320 --> 00:10:12,320
@@ -996,7 +996,7 @@ and she starts to feel maternal towards these little ones.
 200
 00:10:20,320 --> 00:10:23,320
 She's going to be put in charge of them in a stock A tonight,
-今晚她将负责照顾它们。
+今晚，她将负责照顾它们。
 
 201
 00:10:23,320 --> 00:10:27,320
@@ -1006,12 +1006,12 @@ and during the night is when a rock will need her most.
 202
 00:10:27,320 --> 00:10:34,320
 But it's not only the A Thumba herd meeting new friends.
-但不仅仅是阿通巴玛群兽在结交新朋友。
+但不仅仅是阿通巴玛群与新朋友相遇。
 
 203
 00:10:34,320 --> 00:10:37,320
 Up in Nairobi, the keepers have decided
-在内罗毕，那些饲养者决定……
+在内罗毕，那些饲养者决定
 
 204
 00:10:37,320 --> 00:10:41,320
@@ -1021,7 +1021,7 @@ that Underlolo is finally ready to meet the other orphans.
 205
 00:10:41,320 --> 00:10:44,320
 He's been kept apart from them till now,
-直到现在，他一直被与他们分开，
+到目前为止，他一直被与他们分开，
 
 206
 00:10:44,320 --> 00:10:46,320
@@ -1036,17 +1036,17 @@ But now he's getting so much stronger,
 208
 00:10:49,320 --> 00:10:51,320
 it's time to say hello.
-是时候互相问候了。
+是时候打招呼了。
 
 209
 00:10:51,320 --> 00:10:58,320
 Despite their overwhelming curiosity,
-尽管那些大一些的孤儿充满好奇，
+尽管他们充满好奇，
 
 210
 00:10:58,320 --> 00:11:01,320
 the bigger orphans are being very gentle and careful,
-但它们却非常温柔且小心行事。
+那些较大的孤儿却非常温柔且小心。
 
 211
 00:11:01,320 --> 00:11:05,320
@@ -1091,22 +1091,22 @@ for a much-needed rest.
 219
 00:11:40,320 --> 00:11:49,320
 Down here in A Thumba, the L is ahead for bed.
-在阿·通巴这里，人们现在要睡觉了。
+在阿·通巴这里，L阶段即将开始。
 
 220
 00:11:49,320 --> 00:11:52,320
 An area of the Stockade has been sectioned off
-堡垒中的某块区域被隔离了出来。
+堡垒中的某块区域被划分出来作为休息区。
 
 221
 00:11:52,320 --> 00:11:56,320
 so that Wendy can be put in charge of the three new arrivals.
-这样，温迪就可以负责那三个新来的孩子。
+这样，温迪就可以负责那三个新来的人了。
 
 222
 00:11:56,320 --> 00:11:59,320
 This is her chance to be a mini matriarch again,
-这是她再次成为小家长的机会，
+这是她再次成为小族长的机会。
 
 223
 00:11:59,320 --> 00:12:03,320
@@ -1121,7 +1121,7 @@ It's a little bit like kids at their first night at boarding school.
 225
 00:12:07,320 --> 00:12:10,320
 The three new ones, off by themselves,
-那三个新来的孩子独自待在一起，
+那三个新来的人独自待着，
 
 226
 00:12:10,320 --> 00:12:12,320
@@ -1136,7 +1136,7 @@ The three that know the ropes, including Wendy,
 228
 00:12:14,320 --> 00:12:15,320
 are just very relaxed.
-都显得非常放松。
+则显得非常放松。
 
 229
 00:12:15,320 --> 00:12:17,320
@@ -1146,12 +1146,12 @@ As you'd expect, they know the routine here.
 230
 00:12:17,320 --> 00:12:19,320
 Our new ones don't yet.
-我们的新孩子还不太熟悉。
+我们的新来者还不知道这些规矩。
 
 231
 00:12:19,320 --> 00:12:24,320
 Little O'Rock seems quite stressed and is looking for comfort,
-小奥洛克看起来非常紧张，正在寻求安慰，
+小奥洛克看起来非常紧张，在寻求安慰，
 
 232
 00:12:24,320 --> 00:12:26,320
@@ -1236,7 +1236,7 @@ is just thinking what's happening here.
 248
 00:13:12,320 --> 00:13:16,320
 I want to go and check those little ones out.
-我想去看看那些小象的情况。
+我想去看看那些小家伙们。
 
 249
 00:13:16,320 --> 00:13:19,320
@@ -1256,7 +1256,7 @@ She's not the matriarch, but she's a very, very caring elephant.
 252
 00:13:26,320 --> 00:13:30,320
 She's desperate to get in there and look after the little ones,
-她渴望进去照顾那些小家伙们，
+她渴望进去照顾那些小动物，
 
 253
 00:13:30,320 --> 00:13:32,320
@@ -1266,7 +1266,7 @@ but this is supposed to be Wendy's job.
 254
 00:13:32,320 --> 00:13:35,320
 You know, Wendy is so naughty.
-你知道，温迪很调皮。
+你知道，温迪很淘气。
 
 255
 00:13:35,320 --> 00:13:36,320
@@ -1276,12 +1276,12 @@ It's not what I expected.
 256
 00:13:36,320 --> 00:13:39,320
 I was hoping that she was going to sort of smother these little ones
-我原本希望她能用爱来抚育那些小家伙们，
+我原以为她会用爱来抚育那些小家伙们，但事实却并非如此。
 
 257
 00:13:39,320 --> 00:13:42,320
 with a bit of love, but instead it's just like, you know,
-但实际上，她只是把它们推开。
+就像那样，你知道的……
 
 258
 00:13:42,320 --> 00:13:43,320
@@ -1291,7 +1291,7 @@ with a bit of love, but instead it's just like, you know,
 259
 00:13:43,320 --> 00:13:45,320
 And she's pushing them out of the way.
-然后她就把它们推到一边。
+而她却把那些小家伙们推开。
 
 260
 00:13:45,320 --> 00:13:46,320
@@ -1351,7 +1351,7 @@ Nastalot立刻开始负责照顾这些小家伙们了。
 271
 00:14:21,320 --> 00:14:23,320
 comforting and soothing them.
-安慰并安抚他们。
+安慰并抚平他们的情绪。
 
 272
 00:14:23,320 --> 00:14:25,320
@@ -1386,12 +1386,12 @@ How are they ever going to get her to bond with the rest of the herd now?
 278
 00:14:47,320 --> 00:14:58,320
 It's been a few weeks since the little blind calf,
-从那只小瞎牛出生以来已经过了几周时间，
+从那头失明的小牛出生以来已经过了几周时间，
 
 279
 00:14:58,320 --> 00:15:02,320
 and Delono arrived in a terrible state at the Nairobi nursery,
-而德洛诺在内罗毕育婴室里出现时状态很糟糕，
+而德洛诺在内罗毕育婴室里出现时状况很糟糕，
 
 280
 00:15:02,320 --> 00:15:05,320
@@ -1431,12 +1431,12 @@ He knew that because he could not see, could not use his eyes,
 287
 00:15:34,320 --> 00:15:38,320
 but he could use that to direct him to show where the keepers are,
-但他可以依靠这一点来指引自己，找到看守人的所在，
+但他可以依靠这一点来指引自己，找到守卫们所在的位置，
 
 288
 00:15:38,320 --> 00:15:41,320
 and he was very happy to spend out the day with the keepers well.
-他非常高兴能和看守人一起愉快地度过这一天。
+他非常高兴能和守卫们一起愉快地度过这一天。
 
 289
 00:15:44,320 --> 00:15:46,320
@@ -1491,7 +1491,7 @@ Unfortunately, he's not yet ready to go out with the rest of the orphans.
 299
 00:16:15,320 --> 00:16:20,320
 He could never keep up, let alone cope with the rough and tumble of their daily outings.
-他根本无法跟上他们的步伐，更不用说应对他们日常活动的混乱状况了。
+他永远无法跟上他们的步伐，更不用说应对他们日常活动的混乱状况了。
 
 300
 00:16:20,320 --> 00:16:23,320
@@ -1511,7 +1511,7 @@ The quarry is full of beautiful, soft, iron-rich red earth,
 303
 00:16:32,320 --> 00:16:34,320
 and the Emmys love it.
-埃米斯动物们非常喜欢这种土壤。
+埃米斯们非常喜欢这种土壤。
 
 304
 00:16:34,320 --> 00:16:38,320
@@ -1601,17 +1601,17 @@ It's been a couple of weeks since I was last here,
 321
 00:17:46,320 --> 00:17:50,320
 and I'm hoping that Wendy has started to bond again with the other elephants.
-我希望温迪又能与其他大象建立联系了。
+我希望温迪能够再次与其他大象建立亲密关系。
 
 322
 00:17:50,320 --> 00:17:53,320
 But first, I want to check out Iraq.
-不过首先，我想去看看伊拉克。
+不过首先，我想先去看看伊拉克。
 
 323
 00:17:53,320 --> 00:17:58,320
 As the keepers say, he's formed a strong attachment to one of the older elephants,
-正如管理员所说，它已经与其中一头年纪较大的大象建立了深厚的感情。
+正如饲养员所说，它已经与其中一头年纪较大的大象建立了深厚的感情。
 
 324
 00:17:58,320 --> 00:18:01,320
@@ -1631,12 +1631,12 @@ This is the last group of elephants, and amongst them there, in the middle.
 327
 00:18:08,320 --> 00:18:11,320
 That's the one I've been waiting for, that's Iraq.
-那就是我一直在等待的那只大象，就是伊拉克。
+那就是我一直在等待的那只，就是伊拉克。
 
 328
 00:18:11,320 --> 00:18:15,320
 Now, here's one of the ones that we moved from Nairobi just recently.
-现在，这是最近从内罗毕运来的一只大象。
+现在，这是最近从内罗毕带来的那只大象。
 
 329
 00:18:15,320 --> 00:18:20,320
@@ -1651,7 +1651,7 @@ And wherever she goes, he tries to follow, just coming through the middle here.
 331
 00:18:24,320 --> 00:18:31,320
 The tiniest of all, looking just a touch confused, but knows what's good for him.
-他是最瘦小的，看起来有些困惑，但知道如何自处。
+他是最小的那个，看起来有些困惑，但知道如何自处。
 
 332
 00:18:35,320 --> 00:18:39,320
@@ -1731,7 +1731,7 @@ Look at the difference between him and the other elephants.
 347
 00:19:19,320 --> 00:19:22,320
 All the other elephants, quiet, relaxed.
-其他所有大象都安静而放松。
+其他所有大象都安静、放松。
 
 348
 00:19:22,320 --> 00:19:23,320
@@ -1756,7 +1756,7 @@ And that's what he needs right now.
 352
 00:19:35,320 --> 00:19:39,320
 He needs that reassurance to keep us and not enough for him.
-他需要那种安心感来让我们安心，而对他来说则不够。
+他需要那种安心感来让我们安心，但对他来说却不够。
 
 353
 00:19:39,320 --> 00:19:44,320
@@ -1781,7 +1781,7 @@ Once mum's that big presence behind him, just reassuring.
 357
 00:19:54,320 --> 00:19:57,320
 And of course that's what he'd get from his mother.
-当然，这就是他从母亲那里得到的回应。
+当然，这也是他从母亲那里得到的回应。
 
 358
 00:20:01,320 --> 00:20:06,320
@@ -1806,7 +1806,7 @@ It's not a mother and girl, but you'd never know it, because they really do seem
 362
 00:20:16,320 --> 00:20:22,320
 And actually, I think it's essential to a rock for little elephant to have that kind of nurturing right now.
-实际上，我认为对于小象来说，拥有这样的关怀对岩石来说非常重要。
+实际上，我认为对于小象来说，拥有这种关怀对岩石来说非常重要。
 
 363
 00:20:22,320 --> 00:20:27,320
@@ -1826,7 +1826,7 @@ So, life's looking great for a rock.
 366
 00:20:34,320 --> 00:20:40,320
 And the keepers tell me that the other two little lilies who came up with him have also settled in really well.
-那些照顾者告诉我，与它一起成长的其他两只小百合也都生活得很好。
+那些照顾者告诉我，和他一起成长的其他两只小百合也都生活得很好。
 
 367
 00:20:40,320 --> 00:20:41,320
@@ -1851,22 +1851,22 @@ Now, when we brought those three little orphans from Nairobi up here to a thumbe
 371
 00:20:53,320 --> 00:20:56,320
 we thought that Wendy perhaps would adopt the role of the matriarch.
-我们认为温迪或许会扮演族长的角色。
+我们认为，温迪或许会扮演母亲的角色。
 
 372
 00:20:56,320 --> 00:20:58,320
 She would be like a mother to them.
-她会像母亲一样对待他们。
+她会像母亲一样照顾他们。
 
 373
 00:20:58,320 --> 00:21:01,320
 Well, it didn't happen, but look at her now.
-不过事情并没有那样发展，但现在看看她吧。
+不过，事情并没有那样发展，但现在看看她吧。
 
 374
 00:21:01,320 --> 00:21:07,320
 She's beginning to actually move away from that dependence on people and become an elephant,
-她开始不再依赖他人，而像一头大象一样独立行事，
+她开始不再依赖他人，而是像一头大象一样独立行事，
 
 375
 00:21:07,320 --> 00:21:11,320
@@ -1876,7 +1876,7 @@ to be part of the herd, just to have fun, just to enjoy herself.
 376
 00:21:11,320 --> 00:21:16,320
 Nacilok says if she's growing up a little bit, but very much now connected with being an elephant,
-纳西洛说，她虽然稍微长大了些，但现在仍然与大象的特质紧密相连，
+纳奇洛克说，她虽然稍微长大了一些，但现在仍然与大象的身份紧密相连，
 
 377
 00:21:16,320 --> 00:21:19,320
@@ -1891,7 +1891,7 @@ So, what could have prompted Wendy's change of heart?
 379
 00:21:22,320 --> 00:21:27,320
 Maybe, with three new babies in the herd occupying the keepers' attention,
-也许是因为群中有了三个新婴儿，让饲养员无暇顾及她了，
+也许，因为群中有了三个新婴儿来分散饲养员的注意力，
 
 380
 00:21:27,320 --> 00:21:32,320
@@ -1941,7 +1941,7 @@ And he is a bit visual.
 389
 00:22:15,320 --> 00:22:22,320
 He can see me, he could see, he could distinguish myself a little bit, and that's why he was looking at me.
-他能看见我，他能辨认出我，他稍微能区分出我的样子，所以他就看着我。
+他能看见我，他能辨认出我，他稍微能区分出我，所以他在看我。
 
 390
 00:22:23,320 --> 00:22:26,320
@@ -1956,7 +1956,7 @@ Yeah.
 392
 00:22:27,320 --> 00:22:28,320
 That's the bird eye, Sanjay.
-那是鸟眼，桑杰。
+那是鸟眼视角，桑杰。
 
 393
 00:22:28,320 --> 00:22:29,320
@@ -1966,7 +1966,7 @@ Yeah.
 394
 00:22:29,320 --> 00:22:32,320
 See the wind just just on there.
-可以看到风就在那里。
+可以看到风在那儿。
 
 395
 00:22:32,320 --> 00:22:33,320
@@ -1976,12 +1976,12 @@ I can see the thunder.
 396
 00:22:33,320 --> 00:22:35,320
 I can see the thunder. I can see it.
-我能看到雷声，真的能看见。
+我能看到雷声，确实能看见。
 
 397
 00:22:35,320 --> 00:22:37,320
 This is really good.
-这真很好。
+这真不错。
 
 398
 00:22:37,320 --> 00:22:39,320
@@ -1991,12 +1991,12 @@ I'm not surprised you can see so well.
 399
 00:22:39,320 --> 00:22:41,320
 So you think there's definitely some vision?
-所以你认为你确实有某种视力吗？
+所以你认为肯定有某种视力吗？
 
 400
 00:22:41,320 --> 00:22:43,320
 Yeah, definitely.
-是的，绝对有。
+是的，肯定有。
 
 401
 00:22:43,320 --> 00:22:44,320
@@ -2056,12 +2056,12 @@ They sleep behind electric fences to keep them in and predators out.
 412
 00:23:19,320 --> 00:23:27,320
 Using specialized equipment, I'm going to get a unique insight into what Wendy and Iraq do once the lights go out.
-使用专门的设备，我就能了解温迪和伊拉克在灯光熄灭后都在做什么了。
+使用专门的设备，我将能更清楚地了解温迪和伊拉克在灯光熄灭后都在做什么。
 
 413
 00:23:27,320 --> 00:23:31,320
 It's such a privilege to come up to the stock aid at night.
-在夜晚去帮助那些动物真是一种荣幸。
+在夜晚去那里帮助那些动物，真是一种荣幸。
 
 414
 00:23:31,320 --> 00:23:33,320
@@ -2081,32 +2081,32 @@ Little Iraq recently having moved here from Nairobi.
 417
 00:23:42,320 --> 00:23:48,320
 I mean, if it wasn't for Nastalok, this big elephant that's acting as mum to them, this would be a really tough time for them.
-如果没有Nastalok，这个充当它们母亲的大象，对它们来说就会非常艰难。
+如果没有Nastalok，以及那只充当母亲角色的巨象，对它们来说将会是非常艰难的时期。
 
 418
 00:23:50,320 --> 00:23:59,320
 Now, next door to Nastalok and Iraq and these elephants, we've got the youngsters, the adolescents.
-现在，在Nastalok、伊拉克以及那些大象的旁边，还有那些年轻人和青少年。
+现在，在Nastalok、伊拉克和那些大象的旁边，还有那些年轻人和青少年。
 
 419
 00:23:59,320 --> 00:24:01,320
 We've got Wendy and her charms.
-还有温迪她的魅力。
+还有温迪以及她的魅力。
 
 420
 00:24:01,320 --> 00:24:04,320
 And, I mean, they are just like a naughty bunch of school kids.
-而且，它们就像一群调皮的学童一样。
+她们就像一群调皮的学童一样。
 
 421
 00:24:04,320 --> 00:24:09,320
 They've been sent to bed, the lights are out, and suddenly it's like, okay, is it safe?
-他们已经上床睡觉了，灯也关了，突然间就觉得，这安全吗？
+他们已经被送进卧室，灯也关了，突然间就觉得，这安全吗？
 
 422
 00:24:09,320 --> 00:24:10,320
 Can we just start mucking around?
-我们能不能就随便玩玩呢？
+我们能不能就随便玩玩吧？
 
 423
 00:24:10,320 --> 00:24:12,320
@@ -2116,7 +2116,7 @@ I mean, they're having such fun.
 424
 00:24:16,320 --> 00:24:25,320
 You can see that Iraq is determined to stay as close as he can, just as he does during the daytime, to Nastalok, to his surrogate mum.
-可以看出，伊拉克决心尽可能与纳斯塔洛克保持亲近，就像白天那样，就像与他的替代母亲一样。
+可以看出，伊拉克决心尽可能靠近纳斯塔洛克，就像白天那样，他就像对待自己的替代母亲一样。
 
 425
 00:24:25,320 --> 00:24:32,320
@@ -2161,7 +2161,7 @@ She's got a little elephant, little or rock to look after, and it's obviously ta
 433
 00:25:09,320 --> 00:25:15,320
 There she goes. Nastalok's finally given in. She's just toppling over, just going down on her side.
-看，她倒下了——Nastalok终于屈服了。她只是侧着身子倒在地上。
+她倒下了——Nastalok终于屈服了。她只是侧着身子倒在地上。
 
 434
 00:25:15,320 --> 00:25:19,320
@@ -2186,7 +2186,7 @@ It's just like a cradle for him. He must feel so contented doing that.
 438
 00:25:40,320 --> 00:25:49,320
 That's lovely. The way Wendy and the others now, they finally had enough.
-真美好。现在Wendy和其他人终于受够了。
+真美好。Wendy和其他人现在终于受够了。
 
 439
 00:25:49,320 --> 00:25:52,320
@@ -2201,7 +2201,7 @@ This really proves to me that both Wendy and Iran have found their place in the 
 441
 00:25:59,320 --> 00:26:01,320
 They seem so content.
-他们看起来如此满足。
+他们看起来非常满足。
 
 442
 00:26:07,320 --> 00:26:16,320
@@ -2231,7 +2231,7 @@ So, we were all devastated, of course.
 447
 00:27:06,320 --> 00:27:13,320
 Tragedy was that we really thought he had a chance, and he did say one to live.
-悲剧在于，我们真的认为他还有机会活下来，而实际上他确实没有机会了。
+悲剧的是，我们真的认为他还有机会活下来，而实际上他确实没有机会了。
 
 448
 00:27:13,320 --> 00:27:21,320
@@ -2261,12 +2261,12 @@ The trusted absolutely everything they could to save this little calf.
 453
 00:27:47,320 --> 00:27:52,320
 Across their three centres, they currently care for over 50 orphaned elephants,
-在他们所管理的三个中心里，目前有超过50只孤儿象得到照顾。
+在他们所管理的三个中心里，目前有超过50只孤儿象得到照顾，
 
 454
 00:27:52,320 --> 00:27:56,320
 but almost the same number have been rescued and not made it.
-但几乎同样多的孤儿象则被救起，但未能存活下来。
+但几乎同样多的象被救起后却没能活下来。
 
 455
 00:27:56,320 --> 00:27:59,320
@@ -2281,12 +2281,12 @@ Every elephant is precious, but for Daphne and the whole team in Nairobi,
 457
 00:28:05,320 --> 00:28:08,320
 this particular little elephant will never be forgotten.
-这只小象将会永远被铭记。
+这只小象将永远被铭记。
 
 458
 00:28:08,320 --> 00:28:14,320
 And the fight to save Kenya's wild orphans will go on.
-拯救肯尼亚野生孤儿象的战斗还将继续。
+拯救肯尼亚野生孤儿们的努力还将继续下去。
 
 459
 00:28:14,320 --> 00:28:22,320
@@ -2296,7 +2296,7 @@ Next time on Elephant Diaries, we've just heard from Daphne that another orphan 
 460
 00:28:22,320 --> 00:28:26,320
 and I'm just hoping that it's in a lot better condition than it will and Delolo was.
-我希望它的状况会比德尔洛的更好。
+我希望它的状况会比它和德洛洛时好得多。
 
 461
 00:28:26,320 --> 00:28:28,320
@@ -2321,4 +2321,4 @@ And if you miss super giant animals with Steve Bakshor,
 465
 00:28:46,320 --> 00:28:50,320
 last night on BBC One, take a look now on BBC iPlayer.
-昨晚在 BBC One 上观看后，现在可以在 BBC iPlayer 上观看了。
+昨晚在 BBC One 上观看后，现在可以在 BBC iPlayer 上观看。
